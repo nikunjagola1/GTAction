@@ -11,8 +11,10 @@ jobs:
           destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v1
     - name: Build
-      run: swift build -v
+      run: |
+          xcodebuild clean test -project TestGTAction.xcodeproj -scheme TestGTAction -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          bash <(curl -s https://codecov.io/bash)
     - name: Run tests
       run: swift test -v
