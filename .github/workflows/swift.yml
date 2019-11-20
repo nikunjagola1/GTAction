@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Build
       run: |
-          xcodebuild -workspace TestGTAction.xcworkspace -scheme TestGTAction -destination "${destination}" build
+          xcodebuild -workspace TestGTAction.xcworkspace -scheme TestGTAction -destination "${destination}" build OBJROOT=$(PWD)/build SYMROOT=$(PWD)/build
           bash <(curl -s https://codecov.io/bash)
 
       env:
