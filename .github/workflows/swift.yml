@@ -32,7 +32,7 @@ jobs:
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/id_rsa"
           
-        - name: Fastlane build and testflight deploy
+      - name: Fastlane build and testflight deploy
         if: "!startsWith(github.event.head_commit.message, 'build') || !contains(github.event.head_commit.message, '***NO_CI***')"
         uses: maierj/fastlane-action@v0.10.0
         with:
