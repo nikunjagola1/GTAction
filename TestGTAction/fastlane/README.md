@@ -26,6 +26,11 @@ Take screenshots
 fastlane ios beta
 ```
 
+### ios testflight
+```
+fastlane ios testflight
+```
+This will also make sure the profile is up to date
 
 ----
 
