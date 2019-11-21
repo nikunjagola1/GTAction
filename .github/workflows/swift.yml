@@ -1,21 +1,18 @@
-name: Swift
+name: Fastlane
 
 on: [push]
 
 jobs:
   build:
-
+    name: iOS Testflight
     runs-on: macOS-latest
     strategy:
         matrix:
           destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
 
     steps:
-    - uses: actions/checkout@master
-    - name: Build
-      run: |
-          xcodebuild -workspace TestGTAction.xcworkspace -scheme TestGTAction -destination "${destination}" -configuration Release build clean OBJROOT=$(PWD)/build SYMROOT=$(PWD)/build
-          bash <(curl -s https://codecov.io/bash)
-
-      env:
-        destination: ${{ matrix.destination }}
+    - uses: actions/checkout@v1
+    - name: Fastlane Build
+      uses: maierj/fastlane-action@v0.10.0
+      with:
+        lane: 'beta'
