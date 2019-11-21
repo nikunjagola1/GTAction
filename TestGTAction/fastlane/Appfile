@@ -1,4 +1,4 @@
-app_identifier("[[com.tatvasoft.vidoetest]]") # The bundle identifier of your app
+app_identifier("com.tatvasoft.vidoetest") # The bundle identifier of your app
 apple_id("nikunj.agola@tatvasoft.com") # Your Apple email address
 team_id("TLR3WLLVQX")
 
