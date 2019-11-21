@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Build
       run: |
-          xcodebuild clean -project TestGTAction.xcodeproj -scheme TestGTAction -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
+          xcodebuild -workspace TestGTAction.xcworkspace -scheme TestGTAction -destination "${destination}" -configuration Release build clean OBJROOT=$(PWD)/build SYMROOT=$(PWD)/build
           bash <(curl -s https://codecov.io/bash)
 
       env:
