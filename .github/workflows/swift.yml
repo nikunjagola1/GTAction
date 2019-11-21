@@ -11,33 +11,10 @@ jobs:
           destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
 
     steps:
-      # https://github.com/hashicorp/terraform-github-actions/issues/39
-      - name: Setup SSH Keys and known_hosts for fastlane match
-        env:
-          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        #  Copied from https://github.com/maddox/actions/blob/master/ssh/entrypoint.sh
-        run: |
-          SSH_PATH="$HOME/.ssh"
-
-          mkdir -p "$SSH_PATH"
-          touch "$SSH_PATH/known_hosts"
-
-          echo "$PRIVATE_KEY" > "$SSH_PATH/id_rsa"
-
-          chmod 700 "$SSH_PATH"
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          chmod 600 "$SSH_PATH/known_hosts"
-          chmod 600 "$SSH_PATH/id_rsa"
-
-          eval $(ssh-agent)
-          ssh-add "$SSH_PATH/id_rsa"
+      - uses: actions/checkout@v1
           
       - name: Fastlane build and testflight deploy
-        if: "!startsWith(github.event.head_commit.message, 'build') || !contains(github.event.head_commit.message, '***NO_CI***')"
         uses: maierj/fastlane-action@v0.10.0
         with:
           lane: 'build_release'
           subdirectory: 'ios'
-        env:
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
