@@ -3,7 +3,7 @@ name: Fastlane
 on: [push]
 
 jobs:
-  build:
+  ios-testflight:
     name: iOS Testflight
     runs-on: macOS-latest
     strategy:
