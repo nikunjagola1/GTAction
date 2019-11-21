@@ -15,4 +15,4 @@ jobs:
     - name: Fastlane Build
       uses: maierj/fastlane-action@v0.10.0
       with:
-        lane: 'testflight'
+        lane: 'testflight_beta'
