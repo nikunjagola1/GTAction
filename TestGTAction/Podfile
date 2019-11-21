@@ -16,4 +16,5 @@ target 'TestGTAction' do
   pod 'Alamofire'
   pod 'RxAlamofire'
 
+  pod 'AppCenter'
 end
