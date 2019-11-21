@@ -17,9 +17,7 @@ default_platform(:ios)
 
 def build_release
   gym(
-    workspace: "TestGTAction.xcworkspace",
-    scheme: "TestGTAction",
-    export_method: "app-store",
+    scheme: "TestGTAction"
   )
 end
 
@@ -32,7 +30,9 @@ platform :ios do
   end
 
   lane :beta do
-     build_app(scheme: "TestGTAction")
+     get_certificates           # invokes cert
+     get_provisioning_profile   # invokes sigh
+     build_app
   end
 
   desc "This will also make sure the profile is up to date"
