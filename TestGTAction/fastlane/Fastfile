@@ -15,11 +15,21 @@
 
 default_platform(:ios)
 
+def build_release
+  cocoapods()
+  gym(
+    workspace: "TestGTAction.xcworkspace",
+    scheme: "TestGTAction",
+    export_method: "app-store",
+  )
+end
+
+
 platform :ios do
 
-  desc "Take screenshots"
-  lane :screenshot do
-    snapshot
+  desc "Build release"
+  lane :build_release do
+    build_release
   end
 
   lane :beta do
