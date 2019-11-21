@@ -18,8 +18,8 @@ default_platform(:ios)
 platform :ios do
   desc "Upload Beta"
   lane : beta do
-    build_app(scheme: "MyApp",
-            workspace: "Example.xcworkspace",
+    build_app(scheme: "TestGTAction",
+            workspace: "TestGTAction.xcworkspace",
             include_bitcode: true)
     beta
   end
