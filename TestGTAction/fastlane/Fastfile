@@ -23,9 +23,7 @@ platform :ios do
   end
 
   lane :beta do
-     build_app(scheme: "TestGTAction",
-            workspace: "TestGTAction.xcworkspace",
-            include_bitcode: true)
+     build_app(scheme: "TestGTAction")
   end
 
 
