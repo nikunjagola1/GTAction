@@ -16,7 +16,6 @@
 default_platform(:ios)
 
 def build_release
-  cocoapods()
   gym(
     workspace: "TestGTAction.xcworkspace",
     scheme: "TestGTAction",
