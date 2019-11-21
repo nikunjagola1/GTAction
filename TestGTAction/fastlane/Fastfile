@@ -23,11 +23,4 @@ platform :ios do
             include_bitcode: true)
     beta
   end
-
-
-lane :beta do
-  build_app(scheme: "TestGTAction",
-            workspace: "TestGTAction.xcworkspace",
-            include_bitcode: true)
-end
 end
