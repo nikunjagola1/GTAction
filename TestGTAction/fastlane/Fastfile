@@ -23,7 +23,7 @@ platform :ios do
   end
 
   lane :beta do
-     build_app(scheme: "MyApp")
+     build_app(scheme: "TestGTAction")
   end
 
 end
