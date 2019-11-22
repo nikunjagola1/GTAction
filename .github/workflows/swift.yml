@@ -22,4 +22,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Build and test
-        run: bundle exec fastlane scan --destination "${destination}" --scheme "TestGTAction"
+        run: fastlane scan --destination "${destination}" --scheme "TestGTAction"
