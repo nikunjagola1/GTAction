@@ -16,7 +16,7 @@ jobs:
 
       - name: git Clone Cert 
         run:
-          git clone https://nikunjagola1:1129db3522c4b2afc9fd32cb2d394a1e17c21a62@github.com/nikunjagola1/certsTest.git
+          git clone https://nikunjagola1:c75c64e33cde5e1bc3a24eb3081c2299f57d0894@github.com/nikunjagola1/certsTest.git
       - name: List
         run: |
           ls
