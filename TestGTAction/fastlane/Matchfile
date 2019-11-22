@@ -1,4 +1,4 @@
-git_url("https://github.com/nikunjagola1/certsTest.git")
+git_url("git@github.com:nikunjagola1/certsTest.git")
 
 storage_mode("git")
 
