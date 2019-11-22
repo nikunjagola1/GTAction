@@ -17,7 +17,7 @@
 platform :ios do
 
   lane :certificates do
-    match(app_identifier: ["com.tatvasoft.vidoetest"])
+    match(app_identifier: "com.tatvasoft.vidoetest")
   end
 
 
@@ -25,7 +25,6 @@ platform :ios do
   lane :beta_build do
     match(git_url: "https://github.com/nikunjagola1/certsTest.git",
           type: "development",
-          username: "nikunj.agola@tatvasoft.com",
           app_identifier: "com.tatvasoft.vidoetest")
     gym(scheme: "TestGTAction")
 
