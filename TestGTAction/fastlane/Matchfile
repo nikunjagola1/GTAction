@@ -2,7 +2,7 @@ git_url("git@github.com:nikunjagola1/certsTest.git")
 
 storage_mode("git")
 
-type("development") # The default type, can be: appstore, adhoc, enterprise or development
+type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 
 app_identifier("com.tatvasoft.vidoetest")
 

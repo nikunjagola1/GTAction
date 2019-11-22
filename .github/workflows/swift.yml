@@ -11,18 +11,8 @@ jobs:
           destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
 
     steps:
-      # - name: Force xcode 11
-        # run: sudo xcode-select -switch /Applications/Xcode_11.1.app  
-
-      #- name: git Clone Cert 
-      #  run:
-          # git clone https://nikunjagola1:c75c64e33cde5e1bc3a24eb3081c2299f57d0894@github.com/nikunjagola1/certsTest.git
-          #git clone git@github.com:nikunjagola1/certsTest.git
-      - name: List
-        run: |
-          ls
-          cd cert
-          ls
+      - name: Force xcode 11
+          run: sudo xcode-select -switch /Applications/Xcode_11.1.app  
 
       - uses: actions/checkout@v1
           
