@@ -15,7 +15,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_11.1.app  
 
       - name: Clone git
-        run: git clone https://nikunjagola1:c75c64e33cde5e1bc3a24eb3081c2299f57d0894@github.com/nikunjagola1/certsTest.git
+        run: git clone https://nikunjagola1:24f48ca9509f991d8bb76b1903851752430444ef@github.com/nikunjagola1/certsTest.git
 
       - uses: actions/checkout@v1
           
