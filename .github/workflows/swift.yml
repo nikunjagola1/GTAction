@@ -14,10 +14,10 @@ jobs:
           destination: ['platform=iOS Simulator,OS=13.1,name=iPhone X']
 
     steps:
-      - name: Build and Test
-        run: bundle exec fastlane scan --destination "${destination}" --scheme "TestGTAction"
-        env:
-          destination: ${{ matrix.destination }}
+      #- name: Build and Test
+      #  run: bundle exec fastlane scan --destination "${destination}" --scheme "TestGTAction"
+      #  env:
+      #    destination: ${{ matrix.destination }}
 
       - name: Bundle Install
         run: bundle install
