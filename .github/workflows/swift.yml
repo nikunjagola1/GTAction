@@ -11,8 +11,8 @@ jobs:
           destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
 
     steps:
-      - name: Force xcode 11
-        run: sudo xcode-select -switch /Applications/Xcode_11.1.app  
+      # - name: Force xcode 11
+        # run: sudo xcode-select -switch /Applications/Xcode_11.1.app  
 
       - uses: actions/checkout@v1
           
