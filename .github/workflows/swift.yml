@@ -19,5 +19,7 @@ jobs:
       #  env:
       #    destination: ${{ matrix.destination }}
 
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Bundle Install
         run: bundle install
