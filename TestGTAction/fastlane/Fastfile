@@ -16,21 +16,15 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Push a new beta build to TestFlight"
-  lane :beta do
-  	# match(type: "appstore")
-    #build_app(workspace: "TestGTAction.xcworkspace", scheme: "TestGTAction")
-    #upload_to_testflight
-    match(git_url: "git@github.com:nikunjagola1/certsTest.git",
-		  type: "appstore",
-		  app_identifier: "com.tatvasoft.vidoetest")
-    #gym(scheme: "TestGTAction") # Build your app - more options available
-    #pilot
-  end
 
   desc "Check certificates"
   lane :certificates do
     match(app_identifier: "com.tatvasoft.vidoetest")
   end
 
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    build_app(workspace: "TestGTAction.xcworkspace", scheme: "TestGTAction")
+    upload_to_testflight
+  end
 end
