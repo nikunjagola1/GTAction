@@ -1,4 +1,4 @@
-git_url("git@github.com:nikunjagola1/certsTest.git"")
+git_url("https://github.com/nikunjagola1/certsTest.git")
 
 storage_mode("git")
 
@@ -10,7 +10,7 @@ app_identifier("com.tatvasoft.vidoetest")
 
 ENV["MATCH_PASSWORD"] = "tatva123" #Password for the .p12 files saved in git repo.
 ENV["FASTLANE_USER"] = "nikunj.agola@tatvasoft.com" #Username of the iTunes account
-ENV["FASTLANE_PASSWORD"] = "Tatvasoft321" #Password to iTunes account.
+ENV["FASTLANE_PASSWORD"] = "24f48ca9509f991d8bb76b1903851752430444ef" #Password to iTunes account.
 ENV["FASTLANE_TEAM_ID"] = "TLR3WLLVQX" #Team ID to iTunes account.
 
 
