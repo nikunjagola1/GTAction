@@ -27,8 +27,7 @@ platform :ios do
           type: "development",
           username: "nikunj.agola@tatvasoft.com",
           app_identifier: "com.tatvasoft.vidoetest")
-    gym(scheme: "TestGTAction", export_method: "development", clean: true)
-    testflight
+    gym(scheme: "TestGTAction")
 
   end
 
