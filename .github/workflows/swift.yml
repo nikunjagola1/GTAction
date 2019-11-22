@@ -1,6 +1,9 @@
 name: Fastlane-6
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   ios-testflight:
@@ -8,18 +11,10 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
+          destination: ['platform=iOS Simulator,OS=13.1,name=iPhone X']
 
     steps:
-      - name: Force xcode 11
-        run: sudo xcode-select -switch /Applications/Xcode_11.1.app  
-
-      #- name: Clone git
-      #  run: git clone https://nikunjagola1:24f48ca9509f991d8bb76b1903851752430444ef@github.com/nikunjagola1/certsTest.git
-
-      - uses: actions/checkout@v1
-          
-      - name: Fastlane Build
-        uses: maierj/fastlane-action@v0.10.0
-        with:
-          lane: 'certificates'
+      - name: Build and Test
+        run: bundle exec fastlane scan --destination "${destination}" --scheme "TestGTAction"
+        env:
+          destination: ${{ matrix.destination }}

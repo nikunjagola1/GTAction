@@ -16,12 +16,6 @@
 default_platform(:ios)
 
 platform :ios do
-
-  desc "Check certificates"
-  lane :certificates do
-    match(app_identifier: "com.tatvasoft.vidoetest")
-  end
-
   desc "Push a new beta build to TestFlight"
   lane :beta do
     build_app(workspace: "TestGTAction.xcworkspace", scheme: "TestGTAction")
