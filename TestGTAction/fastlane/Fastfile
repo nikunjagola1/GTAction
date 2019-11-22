@@ -13,26 +13,23 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-default_platform(:ios)
-
-def build_release
-  gym(
-    scheme: "TestGTAction"
-  )
-end
-
 
 platform :ios do
 
-  desc "Build release"
-  lane :build_release do
-    build_release
-  end
-
+  desc "Beta Development Build"
   lane :beta do
-     get_certificates           # invokes cert
-     get_provisioning_profile   # invokes sigh
-     build_app
+    match(git_url: "https://github.com/nikunjagola1/certsTest.git",
+          type: "development",
+          username: "nikunj.agola@tatvasoft.com",
+          app_identifier: "com.tatvasoft.vidoetest")
+    gym(scheme: "TestGTAction", export_method: "development", clean: true)
+    testflight
+
+     #match(git_url: "git@github.com:nikunjagola1/certsTest.git",
+     #     type: "development",
+     #     app_identifier: "com.tatvasoft.vidoetest",
+     #     force_for_new_devices: true)
+     #build_app(scheme: "TestGTAction", export_method: "development", clean: true, include_bitcode: false)
   end
 
   desc "This will also make sure the profile is up to date"

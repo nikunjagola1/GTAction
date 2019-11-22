@@ -1,0 +1,21 @@
+git_url("https://github.com/nikunjagola1/certsTest.git")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["com.tatvasoft.vidoetest"])
+
+ENV["MATCH_PASSWORD"] = "tatva123" #Password for the .p12 files saved in git repo.
+ENV["FASTLANE_USER"] = "nikunj.agola@tatvasoft.com" #Username of the iTunes account
+ENV["FASTLANE_PASSWORD"] = "Tatvasoft321" #Password to iTunes account.
+ENV["FASTLANE_TEAM_ID"] = "TLR3WLLVQX" #Team ID to iTunes account.
+
+clone_branch_directly true
+
+# username("user@fastlane.tools") # Your Apple Developer Portal username
+
+# For all available options run `fastlane match --help`
+# Remove the # in the beginning of the line to enable the other options
+
+# The docs are available on https://docs.fastlane.tools/actions/match
