@@ -21,5 +21,5 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Bundle Install
-        run: bundle install
+      - name: Build and test
+        run: bundle exec fastlane scan --destination "${destination}" --scheme "TestGTAction"
