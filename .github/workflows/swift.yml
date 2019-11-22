@@ -16,7 +16,7 @@ jobs:
 
       - name: git Clone Cert 
         run:
-          git clone https://arpit-tatvasoft:1129db3522c4b2afc9fd32cb2d394a1e17c21a62@github.com/arpit-tatvasoft/cert.git 
+          git clone https://nikunjagola1:1129db3522c4b2afc9fd32cb2d394a1e17c21a62@github.com/nikunjagola1/certsTest.git
       - name: List
         run: |
           ls
