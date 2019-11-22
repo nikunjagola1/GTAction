@@ -17,7 +17,7 @@
 platform :ios do
 
   desc "Beta Development Build"
-  lane :beta do
+  lane :beta_build do
     match(git_url: "https://github.com/nikunjagola1/certsTest.git",
           type: "development",
           username: "nikunj.agola@tatvasoft.com",
@@ -25,11 +25,6 @@ platform :ios do
     gym(scheme: "TestGTAction", export_method: "development", clean: true)
     testflight
 
-     #match(git_url: "git@github.com:nikunjagola1/certsTest.git",
-     #     type: "development",
-     #     app_identifier: "com.tatvasoft.vidoetest",
-     #     force_for_new_devices: true)
-     #build_app(scheme: "TestGTAction", export_method: "development", clean: true, include_bitcode: false)
   end
 
   desc "This will also make sure the profile is up to date"
