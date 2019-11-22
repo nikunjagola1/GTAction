@@ -19,4 +19,4 @@ jobs:
       - name: Fastlane Build
         uses: maierj/fastlane-action@v0.10.0
         with:
-          lane: 'certificates'
+          lane: 'beta_build'
