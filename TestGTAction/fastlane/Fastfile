@@ -16,6 +16,11 @@
 
 platform :ios do
 
+  lane :certificates do
+    match(app_identifier: ["com.tatvasoft.vidoetest"])
+  end
+
+
   desc "Beta Development Build"
   lane :beta_build do
     match(git_url: "https://github.com/nikunjagola1/certsTest.git",
